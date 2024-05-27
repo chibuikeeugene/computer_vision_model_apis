@@ -1,0 +1,63 @@
+# The name of the app. Must be unique within a project.
+name: app
+
+# The type of the application to build
+type: 'python:3.10'
+
+mounts:
+  'computer_vision_model_api/api':
+    source: local
+    source_path: api
+
+# Set properties for poetry
+variables:
+    env:
+        POETRY_VERSION: '1.8.2'
+        POETRY_VIRTUALENVS_IN_PROJECT: true
+        POETRY_VIRTUALENVS_CREATE: true
+
+# The size of the persistent disk of the application (in MB)
+disk: 4096
+
+web:
+    upstream:
+        # Ensure your app listens on the right socket
+        socket_family: unix
+    commands:
+        # The exact command varies based on the server you use
+        # 2) ASGI: uvicorn
+        # start: "poetry run gunicorn -k uvicorn.workers.UvicornWorker -w 4 -b unix:$SOCKET app.wsgi:application"
+        start: "python main.py"
+
+
+relationships:
+    postgresql: 'postgresql:postgresql'
+
+hooks:
+    build: |
+        # Fail the build if any part fails
+        set -e
+        # Install poetry
+        export PIP_USER=false
+        curl -sSL https://install.python-poetry.org | python3 - --version $POETRY_VERSION
+        export PATH="/app/.local/bin:$PATH"
+        export PIP_USER=true
+        # Install dependencies
+        poetry install
+
+
+
+
+
+
+
+# The following block defines a single writable directory, 'web/uploads'
+# The 'source' specifies where the writable mount is. The 'local' source
+# indicates that the mount point will point to a local directory on the
+# application container. The 'source_path' specifies the subdirectory
+# from within the source that the mount should point at. 
+# mounts:
+#   'web/uploads':
+#     source: local
+#     source_path: uploads
+

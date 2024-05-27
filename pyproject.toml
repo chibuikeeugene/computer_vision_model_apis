@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "computer_vision_model_apis"
+version = "0.0.2"
+description = "An API containing several health application packages and models for predicting or classifying diseases and utencils"
+authors = ["chibuikeeugene <chibuikeeugene@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.2"
+scikit-learn = "^1.4.2"
+pydantic = "^2.7.0"
+strictyaml = "^1.7.3"
+tensorflow = "^2.16.1"
+scikeras = "^0.13.0"
+tensorflow-datasets = "^4.9.4"
+pillow = "^10.3.0"
+pydantic-settings = "^2.2.1"
+fastapi = "^0.110.3"
+uvicorn = "^0.29.0"
+loguru = "^0.7.2"
+python-multipart = "^0.0.9"
+pytest = "^8.2.0"
+tox = "^4.15.0"
+kitchenware-model-package = "0.0.3"
+braintumor-model-package = "^0.1.0"
+pneumonia_model_package = "^0.2.0"
+tqdm = "^4.66.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

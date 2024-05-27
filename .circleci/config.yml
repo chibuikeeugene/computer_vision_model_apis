@@ -1,0 +1,42 @@
+# CircleCI configuration file
+
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/python:3.10
+  working_directory: ~/computer-vision-project
+
+prepare_venv: &prepare_venv
+  run:
+    name: create virtual environment and install dependencies
+    command: |
+        python3.10 -m venv pneumonia_env
+        source pneumonia_env/bin/activate
+        pip install --upgrade poetry
+        poetry install
+
+jobs:
+  test_the_pneumonia_model_package:
+    <<: *defaults
+    working_directory: ~/computer-vision-project/pneumonia_classification_cnn_model
+    steps:
+      - checkout:
+          path: ~/computer-vision-project/pneumonia_classification_cnn_model
+      - *prepare_venv
+      - run:
+          name: run tests
+          command: |
+            # python -m site --user-base
+            export PATH=$PATH:/home/circleci/computer-vision-project/pneumonia_classification_cnn_model/pneumonia_env/bin && source ~/.bashrc
+            cd /home/circleci/computer-vision-project/pneumonia_classification_cnn_model/pneumonia_model_package
+            tox
+        
+workflows:
+  version: 2
+  testing:
+    jobs:
+      - test_the_pneumonia_model_package:
+          # filters:
+          #   branches:
+          #     only: master

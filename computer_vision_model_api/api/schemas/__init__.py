@@ -1,0 +1,1 @@
+from .predict_schema import PredictionResult

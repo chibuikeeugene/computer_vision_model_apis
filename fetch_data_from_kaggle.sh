@@ -1,0 +1,6 @@
+
+! ~/.local/bin/kaggle datasets download -d paultimothymooney/chest-xray-pneumonia -p /Users/eugene/Personal_Projects/Real_ML_Project/pneumonia_classification_cnn_model/pneumonia_model_package/pneumonia_model_package/datasets && \
+mkdir  /Users/eugene/Personal_Projects/Real_ML_Project/pneumonia_classification_cnn_model/pneumonia_model_package/pneumonia_model_package/datasets/pneumonia-data && \
+chmod +w /Users/eugene/Personal_Projects/Real_ML_Project/pneumonia_classification_cnn_model/pneumonia_model_package/pneumonia_model_package/datasets/pneumonia-data && \
+unzip /Users/eugene/Personal_Projects/Real_ML_Project/pneumonia_classification_cnn_model/pneumonia_model_package/pneumonia_model_package/datasets/chest-xray-pneumonia.zip -d /Users/eugene/Personal_Projects/Real_ML_Project/pneumonia_classification_cnn_model/pneumonia_model_package/pneumonia_model_package/datasets/pneumonia-data && \
+rm -R /Users/eugene/Personal_Projects/Real_ML_Project/pneumonia_classification_cnn_model/pneumonia_model_package/pneumonia_model_package/datasets/chest-xray-pneumonia.zip
