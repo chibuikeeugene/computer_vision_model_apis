@@ -1,5 +1,5 @@
 fastapi==0.110.3
 uvicorn==0.29.0
 kitchenware-model-package==0.0.3
-braintumor-model-package==0.1.0
-pneumonia_model_package==0.2.0
+# braintumor-model-package==0.1.0
+# pneumonia_model_package==0.2.0
