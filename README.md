@@ -1,13 +1,22 @@
-# PNEUMONIA XRAY RESULT CLASSIFICATION
+# COMPUTER VISION MODEL APIS
 
 A machine learning program that classifies correctly sick patient's chest xray reports to be either pneumonia infected or normal. This program uses a **neural network algorithm** to detect sick patient.
 
-## Data set and its description  
+## Description  
 
-| Data              | Description                                               |
-|-------------------|-----------------------------------------------------------|
-| Image             | the image object (jpeg format)                            |
-| Label             | class of the image (normal, pneumonia)                    |
+This API service contains several packages built and hosted independently and finally imported into this project. There are three endpoints
+
+### Service endpoint 1 (Chest xray classifier)
+
+- returns **prediction** for condition(either normal or pneumonia) of a patient's chest health status
+
+### Service endpoint 2 (Kitchen ware classifier)
+
+- object identification - returns the name of the image of any of the trained objects as seen during development (glass, cup, spoon, plate, knife, fork)
+
+### Service endpoint 3 (Brain Scan image classifier)
+
+- returns **prediction** for condition(either glioma, meningioma, no tumor, or pituitary) of a patient's brain scan outcome
 
 ## Dependencies and packages  
 
@@ -26,11 +35,16 @@ A machine learning program that classifies correctly sick patient's chest xray r
 13. uvicorn = 0.29.0
 14. loguru = 0.7.2
 15. python-multipart = 0.0.9
+16. kitchenware-model-package = 0.0.3
+17. braintumor-model-package = 0.1.0
+18. pneumonia_model_package = 0.2.0
 
 ## Source code link  
 
 Source code link:
-[Github link](https://github.com/chibuikeeugene/pneumonia_classification_xception_model.git)
+[Github link](https://github.com/chibuikeeugene/computer_vision_model_apis.git)
 
 Python index package:
 [Pypi link](https://pypi.org/project/pneumonia_model_package/)
+[Pypi link](https://pypi.org/project/braintumor-model-package/)
+[Pypi link](https://pypi.org/project/kitchenware_model_package/)
