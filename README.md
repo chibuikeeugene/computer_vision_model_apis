@@ -1,6 +1,6 @@
 # COMPUTER VISION MODEL APIS
 
-A machine learning program that classifies correctly sick patient's chest xray reports to be either pneumonia infected or normal. This program uses a **neural network algorithm** to detect sick patient.
+Deep learning applications built on neural networks for various business applications.
 
 ## Description  
 
@@ -44,7 +44,7 @@ This API service contains several packages built and hosted independently and fi
 Source code link:
 [Github link](https://github.com/chibuikeeugene/computer_vision_model_apis.git)
 
-Python index package:
+Python index packages:
 [Pypi link](https://pypi.org/project/pneumonia_model_package/)
 [Pypi link](https://pypi.org/project/braintumor-model-package/)
 [Pypi link](https://pypi.org/project/kitchenware_model_package/)
