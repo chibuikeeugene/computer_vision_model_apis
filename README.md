@@ -48,3 +48,9 @@ Python index package:
 [Pypi link](https://pypi.org/project/pneumonia_model_package/)
 [Pypi link](https://pypi.org/project/braintumor-model-package/)
 [Pypi link](https://pypi.org/project/kitchenware_model_package/)
+
+
+## Snapshots
+![Api documentation 1](<Screenshot 2024-06-18 at 10.09.18 pm.png>)
+
+![Api documentation 2](<Screenshot 2024-06-18 at 10.10.04 pm.png>)
