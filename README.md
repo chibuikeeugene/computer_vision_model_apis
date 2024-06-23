@@ -45,10 +45,10 @@ Source code link:
 [Github link](https://github.com/chibuikeeugene/computer_vision_model_apis.git)
 
 Python index packages:
-[Pypi link](https://pypi.org/project/pneumonia_model_package/)
-[Pypi link](https://pypi.org/project/braintumor-model-package/)
-[Pypi link](https://pypi.org/project/kitchenware_model_package/)
 
+- [Pneumonia model package url](https://pypi.org/project/pneumonia_model_package/)
+- [Brain tumor model package url](https://pypi.org/project/braintumor-model-package/)
+- [Kitchen ware model package url](https://pypi.org/project/kitchenware_model_package/)
 
 ## Snapshots
 ![Api documentation 1](<Screenshot 2024-06-18 at 10.09.18 pm.png>)
