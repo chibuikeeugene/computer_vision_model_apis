@@ -1,5 +1,5 @@
 # Defining our base image for which the application will run
-FROM python:3.10
+FROM python:3.10-slim
 
 # Set environment variables
 
@@ -26,23 +26,19 @@ RUN adduser --disabled-password --gecos '' computer-vision-user
 RUN apt-get update \
     && apt-get install
 
-# Update PATH to include Poetry's bin directory 
-ENV PATH="${PATH}:/root/.poetry/bin"
-
-
-# copy our pneumonia api folder to the container directory
+# copy our api folder to the container directory
 COPY . computer_vision_model_api /opt/computer-vision-apis/
 
 # Copy the poetry.lock and pyproject.toml files
-COPY . poetry.lock pyproject.toml /opt/computer-vision-apis/
+COPY . pyproject.toml /opt/computer-vision-apis/
 
 #  Install Poetry using pip
 RUN pip install --no-cache-dir poetry
 
-# Install project dependencies
-RUN poetry config virtualenvs.create true \
-    && poetry config virtualenvs.in-project true \
-    && poetry install
+# Update PATH to include Poetry's bin directory 
+ENV PATH="${PATH}:~/.poetry/bin"
+
+RUN poetry install
 
 # Grant ownership and permissions to the user for the application directory
 RUN chown -R computer-vision-user:computer-vision-user /opt/computer-vision-apis
@@ -50,7 +46,7 @@ RUN chmod -R 777 /opt/computer-vision-apis
     
 USER computer-vision-user 
 
-EXPOSE 9999
+EXPOSE 8001
 
-CMD ["poetry", "run", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "9999" ]
+CMD ["poetry", "run", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8001" ]
 
