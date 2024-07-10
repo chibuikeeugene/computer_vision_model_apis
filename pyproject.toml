@@ -24,6 +24,8 @@ tox = "^4.15.0"
 tqdm = "^4.66.4"
 awscli = "^1.33.13"
 braintumor-model-package = "0.2.0"
+kitchenware-model-package = "0.0.4"
+pneumonia-model-package = "0.3.0"
 
 
 [build-system]
